@@ -1,0 +1,39 @@
+{% extends 'header.html' %}
+{% block mydata %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <style >
+                body {
+                  background-color: rgb(171, 182, 140);
+                    }
+                </style>
+<table class="table table-borderless">
+<thead class="table table-info">
+<tr>
+    <th>patient_code</th>
+    <th>patient_name</th>
+    <th>Address</th>
+    <th>Email_id</th>
+    <th>Phone</th>
+    <th>pincode</th>
+    
+</tr>
+    </thead>
+<thbody>
+{% for i in data %}
+    <tr>
+        <td>{{i.patient_code}}</td>
+        <td>{{i.patient_name}}</td>
+        <td>{{i.Address}}</td>
+        <td>{{i.Email_id}}</td>
+        <td>{{i.Phone}}</td>
+        <td>{{i.pincode}}</td>
+    </tr>
+{% endfor %}
+</thbody>
+</table>    
+        </div>
+    </div>
+</div>
+{% endblock %}

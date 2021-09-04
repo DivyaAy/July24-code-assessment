@@ -1,0 +1,56 @@
+{% extends 'header.html' %}
+{% block mydata %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <style >
+                body {
+                  background-color: rgb(112, 160, 168);
+                    }
+                </style>
+<form action="http://127.0.0.1:8000/patient/search/" method="post">
+    <table class="table">
+        <tr>
+            <td>patient_code</td>
+            <td><input name="patient_code" type="text" required class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+        </tr>
+    </table>
+</form>
+{% if data %}
+<table class="table table-borderless">
+    {% for i in data %}
+    <tr>
+        <td>patient_code</td>
+        <td>{{i.patient_code}}</td>
+    </tr>
+    <tr>
+        <td>patient_name</td>
+        <td>{{i.patient_name}}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>{{i.Address}}</td>
+    </tr>
+    <tr>
+        <td>Email_id</td>
+        <td>{{i.Email_id}}</td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>{{i.Phone}}</td>
+    </tr>
+    <tr>
+        <td>pincode</td>
+        <td>{{i.pincode}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

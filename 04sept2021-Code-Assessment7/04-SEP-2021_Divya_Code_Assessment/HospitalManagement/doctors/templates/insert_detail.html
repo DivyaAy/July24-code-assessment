@@ -1,0 +1,45 @@
+{% extends 'head.html' %}
+{% block mycontent %}
+<style >
+    body {
+      background-color: rgb(106, 121, 124);
+        }
+    </style>
+<form action="http://127.0.0.1:8000/doctor/insert/" method="post">
+   
+    <tr>
+        <td><b>doctor_code</b></td>
+        <td><input placeholder="enter doctor code" name="doctor_code" type="number" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>doctor_name</b></td>
+        <td><input placeholder="enter doctor name" name="doctor_name" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>Address</b></td>
+        <td><input name="Address" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>mobile_no</b></td>
+        <td><input placeholder="enter number" name="mobile_no" type="text" required pattern="[6-9]\d{9}" class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>specialization</b></td>
+        <td><input placeholder="like Dermatologist" name="specialization" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>email_id</b></td>
+        <td><input placeholder="enter abc@gmail.com" name="email_id" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><Button class="btn btn-success">ENTER</Button></td>
+    </tr>
+
+
+</table>
+</form>
+        </div>
+    </div>
+</div>
+{% endblock %}

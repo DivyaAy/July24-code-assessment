@@ -1,0 +1,45 @@
+{% extends 'header.html' %}
+{% block mydata %}
+<style >
+    body {
+      background-color: rgb(0, 255, 179);
+        }
+    </style>
+<form action="http://127.0.0.1:8000/patient/add/" method="post">
+   
+    <tr>
+        <td><b>patient_code</b></td>
+        <td><input placeholder="enter patient code" name="patient_code" type="number" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>patient_name</b></td>
+        <td><input placeholder="enter name" name="patient_name" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>Address</b></td>
+        <td><input name="Address" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>Email_id</b></td>
+        <td><input placeholder="enter @gmail.com" name="Email_id" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>Phone</b></td>
+        <td><input placeholder="enter number" name="Phone" type="text" required pattern="[6-9]\d{9}" class="form-control"></td>
+    </tr>
+    <tr>
+        <td><b>pincode</b></td>
+        <td><input placeholder="enter pincode" name="pincode" type="text" required class="form-control"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><Button class="btn btn-success">ENTER</Button></td>
+    </tr>
+
+
+</table>
+</form>
+        </div>
+    </div>
+</div>
+{% endblock %}

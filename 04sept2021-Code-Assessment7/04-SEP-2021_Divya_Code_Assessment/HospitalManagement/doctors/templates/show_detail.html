@@ -1,0 +1,37 @@
+{% extends 'head.html' %}
+{% block mycontent %}
+<style >
+    body {
+      background-color: rgb(154, 209, 186);
+        }
+    </style>
+<table class="table table-borderless">
+<thead class="table table-info">
+    <tr>
+        <th>doctor_code</th>
+        <th>doctor_name</th>
+        <th>Address</th>
+        <th>mobile_no</th>
+        <th>specialization</th>
+        <th>email_id</th>
+        
+    </tr>
+        </thead>
+    <thbody>
+{% for i in data %}
+        <tr>
+            <td>{{i.doctor_code}}</td>
+            <td>{{i.doctor_name}}</td>
+            <td>{{i.Address}}</td>
+            <td>{{i.mobile_no}}</td>
+            <td>{{i.specialization}}</td>
+            <td>{{i.email_id}}</td>
+        </tr>
+{% endfor %}
+    </thbody>
+    </table>    
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    

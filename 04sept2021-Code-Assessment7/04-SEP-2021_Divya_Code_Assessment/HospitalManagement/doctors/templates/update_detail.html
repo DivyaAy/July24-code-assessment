@@ -1,0 +1,71 @@
+{% extends 'head.html' %}
+{% block mycontent %}
+<style >
+    body {
+      background-color: rgb(33, 214, 184);
+        }
+    </style>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <style >
+                body {
+                  background-color: rgb(189, 218, 223);
+                    }
+                </style>
+<form action="http://127.0.0.1:8000/doctor/updatedoc/" method="post">
+    <table class="table">
+        <tr>
+            <td>doctor_code</td>
+            <td><input name="doctor_code" type="text" required class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+        </tr>
+    </table>
+</form>
+{% if data %}
+<form action="http://127.0.0.1:8000/doctor/upact/" method="post">
+    <table class="table table-borderless">
+        {% for i in data %}
+        <tr>
+            <td></td>
+            <td><input name="newid" value="{{i.id}}" type="hidden" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>doctor_code</td>
+            <td><input name="newdoctor_code" value="{{i.doctor_code}}" type="number" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>doctor_name</td>
+            <td><input name="newdoctor_name" value="{{i.doctor_name}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input name="newAddress" value="{{i.Address}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>mobile_no</td>
+            <td><input name="newmobile_no" value="{{i.mobile_no}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>specialization</td>
+            <td><input name="newspecialization" value="{{i.specialization}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>email_id</td>
+            <td><input name="newemail_id" value="{{i.email_id}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-danger">UPDATE</Button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'header.html' %}
+{% block mydata %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <style >
+                body {
+                  background-color: rgb(223, 169, 224);
+                    }
+                </style>
+<form action="http://127.0.0.1:8000/patient/update/" method="post">
+    <table class="table">
+        <tr>
+            <td>patient_code</td>
+            <td><input name="patient_code" type="text" required class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+        </tr>
+    </table>
+</form>
+{% if data %}
+<form action="http://127.0.0.1:8000/patient/updateact/" method="post">
+    <table class="table table-borderless">
+        {% for i in data %}
+        <tr>
+            <td></td>
+            <td><input name="newID" value="{{i.id}}" type="hidden" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>patient_code</td>
+            <td><input name="newpatient_code" value="{{i.patient_code}}" type="number" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>patient_name</td>
+            <td><input name="newpatient_name" value="{{i.patient_name}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input name="newAddress" value="{{i.Address}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Email_id</td>
+            <td><input name="newEmail_id" value="{{i.Email_id}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input name="newPhone" value="{{i.Phone}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>pincode</td>
+            <td><input name="newpincode" value="{{i.pincode}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-danger">UPDATE</Button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
