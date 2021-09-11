@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+<style>
+    table{
+        background-color: bisque;
+    }
+</style>
+</head>
+<body>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col col-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6">
+            <form action="http://127.0.0.1:8000/user/update/" method="post">
+                <table class="table">
+                    <tr>
+                        <td>Username</td>
+                        <td><input name="username" type="text" required class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+                    </tr>
+                </table>
+            </form>
+{% if data %}
+<form action="http://127.0.0.1:8000/user/updateaction/" method="post">
+    <table class="table table-borderless">
+        {% for i in data %}
+        <tr>
+            <td></td>
+            <td><input name="newid" value="{{i.id}}" type="hidden" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input name="newusername" value="{{i.username}}" type="number" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input name="newpassword" value="{{i.password}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input name="newaddress" value="{{i.address}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>mobile number</td>
+            <td><input name="newmobile_number" value="{{i.mobile_number}}" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Class STD</td>
+            <td><input name="newclassstd" value="{{i.classstd}}" type="text" class="form-control"></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-danger">UPDATE</Button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endif %}     
+        </div>
+
+    </div>
+</div> -->
+<h2>
+    EDIT PROFILE
+</h2>
+<div class="container">
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-6">
+            <table class="table table-borderless">
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input name="name" type="text" value="{{data.name}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input name="username" type="text" value="{{data.username}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input name="password" type="text" value="{{data.password}}" class="form-control"></td>
+                </tr>
+                    <td>Address</td>
+                    <td><input name="address" type="text" value="{{data.address}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Class Std</td>
+                    <td><input name="classstd" type="text" value="{{data.classstd}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input name="mobile_number" type="text" value="{{data.mobile_number}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><Button type="submit" class="btn btn-danger">UPDATE</Button></td>
+                </tr>
+                
+            </table> 
+        </div>
+        <div class="col col-2"></div>
+    </div>
+</div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
